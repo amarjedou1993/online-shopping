@@ -27,8 +27,8 @@
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
 
-<!-- Bootstrap pulse theme CSS -->
-<link href="${css}/cerulean-theme.css" rel="stylesheet">
+<%-- <!-- Bootstrap pulse theme CSS -->
+<link href="${css}/cerulean-theme.css" rel="stylesheet"> --%>
 
 <!-- Custom styles for this template -->
 <link href="${css}/style.css" rel="stylesheet">
@@ -56,6 +56,11 @@
 			<!-- Loading when user click contact -->
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
+			</c:if>
+			
+			<!-- Loading when user click roducts -->
+			<c:if test="${userClickProduct == true or userClickCategory == true}">
+				<%@include file="listProducts.jsp"%>
 			</c:if>
 
 		</div>
