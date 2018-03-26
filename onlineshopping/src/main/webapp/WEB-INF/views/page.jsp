@@ -22,13 +22,17 @@
 <title>Online Shopping - ${title}</title>
 <script>
      window.menu = '${title}';
-    </script>
+     window.context = '${contextRoot}'
+</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
 
-<%-- <!-- Bootstrap pulse theme CSS -->
-<link href="${css}/cerulean-theme.css" rel="stylesheet"> --%>
+<!-- Bootstrap pulse theme CSS -->
+<link href="${css}/cerulean-theme.css" rel="stylesheet">
+
+<!-- Bootstrap pulse theme CSS -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/style.css" rel="stylesheet">
@@ -57,10 +61,15 @@
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			
-			<!-- Loading when user click roducts -->
+
+			<!-- Loading when user click products -->
 			<c:if test="${userClickProduct == true or userClickCategory == true}">
 				<%@include file="listProducts.jsp"%>
+			</c:if>
+			
+			<!-- Loading when user click single product -->
+			<c:if test="${userClickSingleProduct == true}">
+				<%@include file="singleProduct.jsp"%>
 			</c:if>
 
 		</div>
@@ -72,6 +81,13 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery-1.10.2.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
+
+		<!-- Datatable Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+
+		<!-- Datatable Bootsrap Script -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+
 
 		<!-- Self coded javascript -->
 		<script type="text/javascript" src="${js}/myapp.js"></script>

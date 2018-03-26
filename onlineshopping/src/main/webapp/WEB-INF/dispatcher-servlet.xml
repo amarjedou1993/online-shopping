@@ -10,9 +10,12 @@
     http://www.springframework.org/schema/mvc
    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
    
-   <context:component-scan base-package="com.amar.onlineshopping.controller"/>
-   <context:component-scan base-package="com.amar.shoppingbackend.daoimpl"/>
+   <context:component-scan base-package="com.amar.onlineshopping"/>
+   <context:component-scan base-package="com.amar.shoppingbackend"/>
    
+   
+   <!-- we can use ResourceBundleViewResolver with properties configuration -->
+   <!-- View Resolver Bean Injection -->
   <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		
